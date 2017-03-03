@@ -1,6 +1,6 @@
 ## 点灯
 
-点灯号称硬件界的"Hello World", 能点灯就表示环境搭建好了, 也就成功了1/3.
+点灯\(Blink\)号称硬件界的"Hello World", 能点灯就表示环境搭建好了, 也就成功了1/3.
 
 连接Arduino Due的Programming USB口到电脑.
 
@@ -44,11 +44,12 @@ LED\_BUILTIN, 可以直接用数字13替换, 引用一下:
 
 Arduino有个不成文的约定, 每个板子总有一个叫 13 的端口连接到LED, 并且高电平点亮. 以前可能会有 '\#define LED\_PIN_ 13' _或者 _ _'int ledPin = 13' 之类的代码, 现在直接省去宏定义, 用 LED\_BUILTIN 就可以了.
 
-digitalWrite\(pin, value\); pin: the pin number; value: HIGH or LOW; 这里就是设置LED引脚输出高电平\(HIGH\)或者低电平\(LOW\).
+digitalWrite\(pin, value\); pin: the pin number  
+; value: HIGH or LOW; 这里就是设置LED引脚输出高电平\(HIGH\)或者低电平\(LOW\).
 
-delay\(ms\); Pauses the program for the amount of time \(in miliseconds\) specified as parameter. delay\(1000\)也就是延时1s. 
+delay\(ms\); Pauses the program for the amount of time \(in miliseconds\) specified as parameter. delay\(1000\)也就是延时1s.
 
-接下来, 点击Tools, 选择板子类型和串口号: 
+接下来, 点击Tools, 选择板子类型和串口号:
 
 ![](/assets/选择.png)
 
