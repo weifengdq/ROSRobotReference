@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [First Chapter](chapter1.md)
-* [ArduinoDue.md](arduinodue.md.md)
+* [ArduinoDue](arduinodue.md.md)
 
