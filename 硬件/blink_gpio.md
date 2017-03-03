@@ -57,6 +57,16 @@ delay\(ms\); Pauses the program for the amount of time \(in miliseconds\) specif
 
 这就是Blink, 恭喜你完成了硬件界的"Hello World"!
 
+
+
+---
+
+## LED原理图
+
+我们回过头来看一下Arduino Due LED部分的原理图:
+
+![](/assets/LED13.png)13引脚通过一个电压跟随器驱动一个串了1kΩ限流电阻的LED， 当13引脚输出为高电平时, LED亮. 单片机的IO口是可以直接驱动加限流电阻的LED的, 为什么接了一个电压跟随器, 大概是因为13用作普通IO或者PWM对外输出时, LED不至于影响连在该引脚的其它电路吧.
+
 ---
 
 ## Reference
