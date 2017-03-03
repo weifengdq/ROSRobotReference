@@ -1,4 +1,4 @@
-## [Arduino Due](https://www.arduino.cc/en/Main/ArduinoBoardDue)
+## [Arduino Due](https://www.arduino.cc/en/Main/ArduinoBoardDue) Overview
 
 > The Arduino Due is the first Arduino board based on a 32-bit ARM core microcontroller. With 54 digital input/output pins, 12 analog inputs, it is the perfect board for powerful larger scale Arduino projects.
 
@@ -18,9 +18,7 @@ Programming Port和NativePort都可以用来下载程序, 官方推荐Programmin
 
 ## Reference
 
-https://www.arduino.cc/en/Main/ArduinoBoardDue
+[https://www.arduino.cc/en/Main/ArduinoBoardDue](https://www.arduino.cc/en/Main/ArduinoBoardDue)
 
 网址的最下面可以下载ArduinoDue的原理图和PCB\(解压后可以使用Eagle打开\).
-
-
 
