@@ -48,5 +48,33 @@ Arduino, Raspberry Pi怎么接线之类的很形象的图很多都是用这个�
 * Github Arduino Trending: [https://github.com/trending/arduino](https://github.com/trending/arduino)
 * Github Processing Trending: [https://github.com/trending/processing](https://github.com/trending/processing)
 
+---
+
+## 逸文
+
+细心的孩子可能发现会有 arduino.cc 和 arduino.org 两个域名, 或者有Arduino和Genuino两个版本, 这是什么鬼? 其实两个域名都算官网, Arduino和Genuino也没什么差别, Quora的一个问题 [What is the difference between Arduino Uno and Genuino Uno?](https://www.quora.com/What-is-the-difference-between-Arduino-Uno-and-Genuino-Uno)  下面Anand Padmanabhan给出了一个回答, 引用如下: 
+
+> No. There is no difference. These are just 2 names of same product in different parts of the world - inside & outside US to be precise
+>
+>
+>
+> There was actually a split up between the 2 Arduino groups - Arduino.cc and Arduino.org 
+>
+>
+>
+> Arduino.org were doing more of production and Arduino.cc was doing lot of development. Trademark of Arduino in US is with Arduino.cc and everywhere else is with Arduino.org; so Arduino.cc is selling it as Genuino boards outside US.
+>
+>
+>
+> Here is what has exactly happened - Arduino LLC is the company founded by \[Massimo Banzi\], \[David Cuartielles\], \[David Mellis\], \[Tom Igoe\] and \[Gianluca Martino\] in 2009 and is the owner of the Arduino trademark and gave us the designs, software, and community support that’s gotten the Arduino where it is. The boards were manufactured by a spinoff company, Smart Projects Srl, founded by the same \[Gianluca Martino\]. So far, so good.
+>
+>
+>
+> Things got ugly in November when \[Martino\] and new CEO \[Federico Musto\] renamed Smart Projects to Arduino Srl and registered arduino.org \(which is arguably a better domain name than the old arduino.cc\). Whether or not this is a infringement is waiting to be heard in the Massachussetts District Court.
+>
+> According to this Italian Wired article, the cause of the split is that \[Banzi\] and the other three wanted to internationalize the brand and license production to other firms freely, while \[Martino\] and \[Musto\] at the company formerly known as Smart Projects want to list on the stock market and keep all production strictly in the Italian factory.
+>
+> Naturally, a lot of the original Arduino’s Open Source Hardware credentials and ethos are hanging in the balance, not to mention its supply chain and dealer relationships.
+
 
 
