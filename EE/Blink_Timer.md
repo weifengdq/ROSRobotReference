@@ -18,15 +18,15 @@ void loop() {
 }
 ```
 
-灯亮, CPU停不下来, 空跑1000ms, 再灯灭, 再空跑1000ms...大好年华都浪费在空跑上, 如果有其他任务怎么办...所以这是一种很低效的做法, 几乎没有人会这么做. 
+灯亮, CPU停不下来, 空跑1000ms, 再灯灭, 再空跑1000ms...大好年华都浪费在空跑上, 如果有其他任务怎么办...所以这是一种很低效的做法, 几乎没有人会这么做.
 
 学过单片机或微机原理的都知道一个叫定时器中断的东西, 我们开一个定时器中断, 比如1s中断一次, 中断中改变灯的状态即可, 其他时间该干嘛干嘛就好了.
 
-[Arduino Reference](https://www.arduino.cc/en/Reference/HomePage) 给出了一个 millis\(\) 函数: 
+[Arduino Reference](https://www.arduino.cc/en/Reference/HomePage\) 给出了一个 millis\(\) 函数:
 
 > Returns the number of milliseconds since the Arduino board began running the current program. This number will overflow \(go back to zero\), after approximately 50 days.
 
-我们可以用它来做一个定时器: 
+我们可以用它来做一个定时器, 直接上代码啦:
 
 ```c
 unsigned long savedTime = 0;
@@ -57,8 +57,11 @@ void blinkTask() {
   }
   ++i;
 }
-
 ```
+
+这样就很容易的实现了一个定时器的任务了, 如果还有其他任务, 就在 blinkTask\(\); 后面继续添加Task好了. 至于面向对象的同学看不下去了, 要动手封装了, 操作系统的同学看不下去了, 要加上优先级...有兴趣的可以自己搞一搞啦! 其实Arduino 有好多按捺不住的同学自己封装好了timer库了, 我们拿来自己用就好了, 如 [Timer Library for Arduino, ](http://playground.arduino.cc/Code/Timer)[SimpleTimer Library for Arduino](http://playground.arduino.cc/Code/SimpleTimer)等.
+
+
 
 
 
