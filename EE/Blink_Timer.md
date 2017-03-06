@@ -111,5 +111,21 @@ void doAfter()
 } 
 ```
 
+运行之前需要先安装 Timer Library库, 这是Arduino库的通用安装方法: 
 
+> ## Installation
+>
+>
+>
+> You can download the library from here:
+>
+>
+>
+> https://github.com/JChristensen/Timer
+>
+>
+>
+> As with all libraries, unzip the file into the 'libraries' folder in your Arduino directory, which will be in something like 'My Documents\Arduino' on Windows, 'Documents/Arduino' on Mac etc. If this is the first library you have installed, you will need to create a directory there called 'libraries'.
+
+我的Win10 的 libraries 目录在: C:\Users\weifengdq\Documents\Arduino\libraries, 其中weifengdq是我的电脑用户名. 换成你的就可以了. 
 
