@@ -59,50 +59,50 @@ void blinkTask() {
 }
 ```
 
-这样就很容易的实现了一个定时器的任务了, 如果还有其他任务, 就在 blinkTask\(\); 后面继续添加Task好了.  学过C的都知道要封装个结构体了, 至于面向对象的同学看不下去了, 要动手封装timer类了, 操作系统的同学看不下去了, 要加上优先级...有兴趣的可以自己搞一搞啦! 其实Arduino 有好多按捺不住的同学自己封装好了timer库了, 我们拿来自己用就好了, 如 [Timer Library for Arduino, ](http://playground.arduino.cc/Code/Timer\)[SimpleTimer Library for Arduino]\(http://playground.arduino.cc/Code/SimpleTimer)等. 我们摘抄一个timer library的例子给大家看看: 
+这样就很容易的实现了一个定时器的任务了, 如果还有其他任务, 就在 blinkTask\(\); 后面继续添加Task好了.  学过C的都知道要封装个结构体了, 至于面向对象的同学看不下去了, 要动手封装timer类了, 操作系统的同学看不下去了, 要加上优先级...有兴趣的可以自己搞一搞啦! 其实Arduino 有好多按捺不住的同学自己封装好了timer库了, 我们拿来自己用就好了, 如 [Timer Library for Arduino, ](http://playground.arduino.cc/Code/Timer\)[SimpleTimer Library for Arduino]\(http://playground.arduino.cc/Code/SimpleTimer)[SimpleTimer Library for Arduino](http://playground.arduino.cc/Code/SimpleTimer)等. 我们摘抄一个timer library的例子给大家看看:
 
 ```c
 #include "Timer.h"
- 
- 
+
+
 Timer t;
- 
- 
+
+
 int ledEvent;
- 
- 
+
+
 void setup()
 {
   Serial.begin(9600);
   int tickEvent = t.every(2000, doSomething);
   Serial.print("2 second tick started id=");
   Serial.println(tickEvent);
- 
+
   pinMode(13, OUTPUT);
   ledEvent = t.oscillate(13, 50, HIGH);
   Serial.print("LED event started id=");
   Serial.println(ledEvent);
- 
+
   int afterEvent = t.after(10000, doAfter);
   Serial.print("After event started id=");
   Serial.println(afterEvent);
- 
+
 }
- 
- 
+
+
 void loop()
 {
   t.update();
 }
- 
- 
+
+
 void doSomething()
 {
   Serial.print("2 second tick: millis()=");
   Serial.println(millis());
 }
- 
- 
+
+
 void doAfter()
 {
   Serial.println("stop the led event");
