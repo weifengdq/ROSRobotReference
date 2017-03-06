@@ -123,3 +123,5 @@ void doAfter()
 
 我的Win10 的 libraries 目录在: C:\Users\weifengdq\Documents\Arduino\libraries, 其中weifengdq是我的电脑用户名. 换成你的就可以了.
 
+类似的库还有 [SimpleTimer Library for Arduino](http://playground.arduino.cc/Code/SimpleTimer) 等.
+
