@@ -114,7 +114,13 @@ inputString\(200\); 为inputString分配200字节的buffer.
 >
 > the number of bytes available to read
 
+**Serial.read\(\)**
 
+> Reads incoming serial data. read\(\) inherits from the Stream utility class.
+>
+> Returns
+>
+> the first byte of incoming serial data available \(or -1 if no data is available\) - int
 
 ---
 
