@@ -92,11 +92,11 @@ inputString\(200\); 为inputString分配200字节的buffer.
 >
 > Serial.print\("Hello world."\) gives "Hello world."
 
-我们以前学习51单片机的时候 , 有一个关键字叫coe, 可以把字符串放到Flash中, 而不是RAM中, 这样虽然速度稍慢, 但可以存储的字符量一下在变大了好多, 毕竟RAM一般比FLASH少, 类似我们电脑内存比硬盘容量小, 像Arduino Due的RAM只有96kB, Flash有512kB. 
+我们以前学习51单片机的时候 , 有一个关键字叫coe, 可以把字符串放到Flash中, 而不是RAM中, 这样虽然速度稍慢, 但可以存储的字符量一下在变大了好多, 毕竟RAM一般比FLASH少, 类似我们电脑内存比硬盘容量小, 像Arduino Due的RAM只有96kB, Flash有512kB.
 
 > You can pass flash-memory based strings to Serial.print\(\) by wrapping them with F\(\). For example :
 >
-> Serial.print\(F\(“Hello World”\)\)
+> Serial.print\(F\(“Hello World”\)\)
 
 这就是Arduino中把字符串放到Flash中的方法, 也就是使用F\(\)即可.
 
@@ -105,6 +105,16 @@ inputString\(200\); 为inputString分配200字节的buffer.
 > Called when data is available. Use Serial.read\(\) to capture this data.
 
 串口0的接收中断, Arduino mega还有 serialEvent1\(\), serialEvent2\(\), serialEvent3\(\)等.
+
+**Serial.available\(\)**
+
+> Get the number of bytes \(characters\) available for reading from the serial port. This is data that's already arrived and stored in the serial receive buffer \(which holds 64 bytes\). available\(\) inherits from the Stream utility class.
+>
+> Returns
+>
+> the number of bytes available to read
+
+
 
 ---
 
