@@ -7,5 +7,5 @@
   * [ArduinoIDEInstallSetting](硬件/blink.md)
   * [Blink\_Delay](硬件/blink_gpio.md)
   * [Blink\_Timer](硬件/blink_timer.md)
-  * SerialCommunication
+  * [SerialCommunication](硬件/serialcommunication.md)
 
