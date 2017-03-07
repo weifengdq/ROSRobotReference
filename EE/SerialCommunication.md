@@ -124,21 +124,21 @@ inputString\(200\); 为inputString分配200字节的buffer.
 
 程序就先看到这里.
 
-
-
----
-
- 我是华丽的分割线 
-
----
-
-
-
-
-
 ---
 
 ## Reference
 
-[https://www.arduino.cc/en/Reference/Serial](https://www.arduino.cc/en/Reference/Serial)
+[https://www.arduino.cc/en/Reference](https://www.arduino.cc/en/Reference/Serial)
+
+---
+
+华丽的分割线后， 我们来看下原理图： 
+
+![](/assets/TXRX.png)串口0通过一片 ATMEGA16U2 作USB转串口. 这是个单片机, 封装了很多东西. 据说ATMEGA16U2已经成了新出的Arduino的标配.
+
+---
+
+接下来分享一篇以前的文章, 可以让分不清TTL, CMOS, RS232的人有一个明确的区分:
+
+[硬件选讲之UART](http://blog.csdn.net/weifengdq/article/details/39451733)
 
