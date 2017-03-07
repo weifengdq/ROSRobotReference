@@ -92,7 +92,7 @@ inputString\(200\); 为inputString分配200字节的buffer.
 >
 > Serial.print\("Hello world."\) gives "Hello world."
 
-我们以前学习51单片机的时候 , 有一个关键字叫coe, 可以把字符串放到Flash中, 而不是RAM中, 这样虽然速度稍慢, 但可以存储的字符量一下在变大了好多, 毕竟RAM一般比FLASH少, 类似我们电脑内存比硬盘容量小, 像Arduino Due的RAM只有96kB, Flash有512kB.
+我们以前学习51单片机的时候 , 有一个关键字叫code, 或者STM32的全局const关键字, 可以把字符串放到Flash中, 而不是RAM中, 这样虽然速度稍慢, 但可以存储的字符量一下在变大了好多, 毕竟RAM一般比FLASH少, 类似我们电脑内存比硬盘容量小, 像Arduino Due的RAM只有96kB, Flash有512kB.
 
 > You can pass flash-memory based strings to Serial.print\(\) by wrapping them with F\(\). For example :
 >
@@ -121,6 +121,20 @@ inputString\(200\); 为inputString分配200字节的buffer.
 > Returns
 >
 > the first byte of incoming serial data available \(or -1 if no data is available\) - int
+
+程序就先看到这里.
+
+
+
+---
+
+ 我是华丽的分割线 
+
+---
+
+
+
+
 
 ---
 
