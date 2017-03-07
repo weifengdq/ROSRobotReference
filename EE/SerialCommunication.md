@@ -132,9 +132,11 @@ inputString\(200\); 为inputString分配200字节的buffer.
 
 ---
 
-华丽的分割线后， 我们来看下原理图： 
+华丽的分割线后， 我们来看下原理图：
 
 ![](/assets/TXRX.png)串口0通过一片 ATMEGA16U2 作USB转串口. 这是个单片机, 封装了很多东西. 据说ATMEGA16U2已经成了新出的Arduino的标配.
+
+其他我们用作USB转串口的还有 CH340, CH341,  PL2303, CP2102, CP2104, 双串口的CP2105， FT2232等.
 
 ---
 
