@@ -1,12 +1,10 @@
 ## 串口通信
 
-我们打开File -&gt; Example -&gt; Communication -&gt; SerialEvent： 
+我们打开File -&gt; Example -&gt; Communication -&gt; SerialEvent：
 
 ![](/assets/SerialEvent.png)
 
-
-
-下载到Arduino Due中, 然后点击右上角的串口监视器图标: 
+下载到Arduino Due中, 然后点击右上角的串口监视器图标:
 
 ![](/assets/SerialMonitor.png)
 
@@ -16,7 +14,7 @@
 
 我们在输入框中输入一行字母, 然后按下回车, 就可以在接收框中看到刚才输入框中的内容.
 
-我们把代码贴过来: 
+我们把代码贴过来:
 
 ```c
 String inputString = "";         // a string to hold incoming data
@@ -60,27 +58,27 @@ void serialEvent() {
 }
 ```
 
-String: 
+**String**
 
 > The String object allows you to manipulate strings of text in a variety of useful ways. You can append characters to Strings, combine Strings through concatenation, get the length of a String, search and replace substrings, and more.
 
-boolean:
+**boolean**
 
 > A boolean holds one of two values, true or false. \(Each boolean variable occupies one byte of memory.\)
 
-Serial.begin\(\):
+**Serial.begin\(\)**
 
 > Sets the data rate in bits per second \(baud\) for serial data transmission. For communicating with the computer, use one of these rates: 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, or 115200. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.
 
 Serial.begin\(9600\): 设置串口0通信的波特率为9600bps. Arduino Due还有Serial1, Serial2, Serial3. 连接USB Programming Port口的是Serail.
 
-string.reserve\(size\): 
+**string.reserve\(size\)**
 
 > The String reserve\(\) function allows you to allocate a buffer in memory for manipulating strings.
 
 inputString\(200\); 为inputString分配200字节的buffer.
 
-Serial.println\(\):
+**Serial.println\(\)**
 
 > Prints data to the serial port as human-readable ASCII text followed by a carriage return character \(ASCII 13, or '\r'\) and a newline character \(ASCII 10, or '\n'\). This command takes the same forms as Serial.print\(\).
 
@@ -94,17 +92,23 @@ Serial.println\(\):
 >
 > Serial.print\("Hello world."\) gives "Hello world."
 
-我们以前学习51单片机的时候 , 有一个关键字叫coe, 可以把字符串放到Flash中, 而不是RAM中, 这样虽然速度稍慢, 但可以存储的字符量一下在变大了好多, 毕竟RAM只有
+我们以前学习51单片机的时候 , 有一个关键字叫coe, 可以把字符串放到Flash中, 而不是RAM中, 这样虽然速度稍慢, 但可以存储的字符量一下在变大了好多, 毕竟RAM一般比FLASH少, 类似我们电脑内存比硬盘容量小, 像Arduino Due的RAM只有96kB, Flash有512kB. 
 
- 
+> You can pass flash-memory based strings to Serial.print\(\) by wrapping them with F\(\). For example :
+>
+> Serial.print\(F\(“Hello World”\)\)
 
- 
+这就是Arduino中把字符串放到Flash中的方法, 也就是使用F\(\)即可.
+
+**serialEvent\(\)**
+
+> Called when data is available. Use Serial.read\(\) to capture this data.
+
+串口0的接收中断, Arduino mega还有 serialEvent1\(\), serialEvent2\(\), serialEvent3\(\)等.
 
 ---
 
 ## Reference
 
-https://www.arduino.cc/en/Reference/Serial
-
-
+[https://www.arduino.cc/en/Reference/Serial](https://www.arduino.cc/en/Reference/Serial)
 
