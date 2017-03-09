@@ -87,6 +87,28 @@ void loop() {
 
 下载到Arduino Due中, 可以看到板载的LED逐渐的变亮或变灭.
 
+> analogWrite\(pin, value\)
+>
+> pin: the pin to write to.
+>
+> value: the duty cycle: between 0 \(always off\) and 255 \(always on\).
+>
+> The frequency of the PWM signal on most pins is approximately 490 Hz. On the Uno and similar boards, pins 5 and 6 have a frequency of approximately 980 Hz. Pins 3 and 11 on the Leonardo also run at 980 Hz.
+>
+> The PWM outputs generated on pins 5 and 6 will have higher-than-expected duty cycles. This is because of interactions with the millis\(\) and delay\(\) functions, which share the same internal timer used to generate those PWM outputs. This will be noticed mostly on low duty-cycle settings \(e.g 0 - 10\) and may result in a value of 0 not fully turning off the output on pins 5 and 6.
+
+也就是5, 6端口的PWM用的时候慎重, 低占空比的时候容易出问题.
+
+那如果想改变PWM的频率和分辨率怎么办? Arduino并没有封装进来, 那就直接改寄存器了. 下载ATSAM3X8E的Datasheet, 然后参考PWM一章, 同时参考下面几个链接: 
+
+[On Arduino Due PWM Frequency](http://www.kerrywong.com/2014/09/21/on-arduino-due-pwm-frequency/)
+
+[Secrets of Arduino PWM](https://www.arduino.cc/en/Tutorial/SecretsOfArduinoPWM)
+
+http://playground.arduino.cc/Code/PwmFrequency
+
+祝好运!
+
 ## Reference
 
 [https://en.wikipedia.org/wiki/Pulse-width\_modulation](https://en.wikipedia.org/wiki/Pulse-width_modulation)
