@@ -4,7 +4,7 @@ PWM, Pulse Width Modulation\(脉冲宽度调制\)的缩写. 以前用白炽灯�
 
 ![](/assets/占空比.png)
 
-PWM平均值的计算可以通过积分积出来: 
+PWM平均值的计算可以通过积分积出来:
 
 ![](/assets/PWM1.png)
 
@@ -12,15 +12,15 @@ PWM平均值的计算可以通过积分积出来:
 
 ![](/assets/PWM平均值.png)
 
-如果ymin = 0, 则: 
+如果ymin = 0, 则:
 
 ![](/assets/PWM平均值3.png)
 
 这就是我们常见的形式.
 
-PWM还有一个**分辨率**的概念, 我们常说的 7bit, 8bit, 10bit, 12bit, 16bitPWM指的就是分辨率. 常说的无级调速其实还是有级的, 只不过级数多了而已. 如果分辨率是1bit, 就有只有开和关两种状态, 如果是2bit分辨率, 就有0%, 25%, 50%, 100%4种状态. 类似我们开车时的挂1 2 3 4挡, 8bit PWM 就有256种状态. 
+PWM还有一个**分辨率**的概念, 我们常说的 7bit, 8bit, 10bit, 12bit, 16bitPWM指的就是分辨率. 常说的无级调速其实还是有级的, 只不过级数多了而已. 如果分辨率是1bit, 就有只有开和关两种状态, 如果是2bit分辨率, 就有0%, 25%, 50%, 100%4种状态. 类似我们开车时的挂1 2 3 4挡, 8bit PWM 就有256种状态.
 
-PWM主要调的是占空比, 那这个周期或者频率怎么确定? 得看应用场景了, 从维基摘一段: 
+PWM主要调的是占空比, 那这个周期或者频率怎么确定? 得看应用场景了, 从维基摘一段:
 
 > Switching has to be done several times a minute in an electric stove; 120 Hz in a lamp dimmer; between a few kilohertz \(kHz\), to tens of kHz for a motor drive; and well into the tens or hundreds of kHz in audio amplifiers and computer power supplies.
 
@@ -57,11 +57,37 @@ void loop()
 
 delayMicroseconds\(\)是延时多少微秒, 这个程序产生1kHz, 10%占空比的方波, 有1000的分辨率\(1000种状态\). 如果去掉delayMicroseconds\(\), 我们可以得到恐怖的几百千甚至可能上兆的频率. 如果单片机有定时器的话, 我们可以用定时器来精确产生各种频率占空比的PWM波.
 
-另外一种产生PWM的方法就是直接填寄存器了, 现在
+另外一种产生PWM的方法就是直接填寄存器了, 现在的单片机内部的定时器都有产生PWM的功能, 当然, Arduino也封装好嘞, 不用操作寄存器, 直接一条命令就可以了. 我们打开File -&gt; Examples -&gt; Digital -&gt; Fading, 把ledPin修改为13:
+
+```
+int ledPin = 13;    // LED connected to digital pin 9
+
+void setup() {
+  // nothing happens in setup
+}
+
+void loop() {
+  // fade in from min to max in increments of 5 points:
+  for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 5) {
+    // sets the value (range from 0 to 255):
+    analogWrite(ledPin, fadeValue);
+    // wait for 30 milliseconds to see the dimming effect
+    delay(30);
+  }
+
+  // fade out from max to min in increments of 5 points:
+  for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 5) {
+    // sets the value (range from 0 to 255):
+    analogWrite(ledPin, fadeValue);
+    // wait for 30 milliseconds to see the dimming effect
+    delay(30);
+  }
+}
+```
+
+下载到Arduino Due中, 可以看到板载的LED逐渐的变亮或变灭.
 
 ## Reference
 
-https://en.wikipedia.org/wiki/Pulse-width\_modulation
-
-
+[https://en.wikipedia.org/wiki/Pulse-width\_modulation](https://en.wikipedia.org/wiki/Pulse-width_modulation)
 
