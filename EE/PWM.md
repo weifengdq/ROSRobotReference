@@ -85,7 +85,7 @@ void loop() {
 }
 ```
 
-下载到Arduino Due中, 可以看到板载的LED逐渐的变亮或变灭.
+下载到Arduino Due中, 可以看到板载的LED逐渐的变亮或变灭. 实测PWM频率是1kHz.
 
 > analogWrite\(pin, value\)
 >
@@ -99,13 +99,13 @@ void loop() {
 
 也就是5, 6端口的PWM用的时候慎重, 低占空比的时候容易出问题.
 
-那如果想改变PWM的频率和分辨率怎么办? Arduino并没有封装进来, 那就直接改寄存器了. 下载ATSAM3X8E的Datasheet, 然后参考PWM一章, 同时参考下面几个链接: 
+那如果想改变PWM的频率和分辨率怎么办? Arduino并没有封装进来, 那就直接改寄存器了. 下载ATSAM3X8E的Datasheet, 然后参考PWM一章, 同时参考下面几个链接:
 
 [On Arduino Due PWM Frequency](http://www.kerrywong.com/2014/09/21/on-arduino-due-pwm-frequency/)
 
 [Secrets of Arduino PWM](https://www.arduino.cc/en/Tutorial/SecretsOfArduinoPWM)
 
-http://playground.arduino.cc/Code/PwmFrequency
+[http://playground.arduino.cc/Code/PwmFrequency](http://playground.arduino.cc/Code/PwmFrequency)
 
 祝好运!
 
